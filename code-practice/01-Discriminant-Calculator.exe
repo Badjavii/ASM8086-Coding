@@ -1,0 +1,17 @@
+.data 
+    A DW 3
+    B DW 5
+    C DW 1
+    disc DW 0   ; Discriminante
+
+.code
+    MOV AX, B     ; AX <- B
+    MUL AX        ; AX <- B^2
+    MOV BX, AX    ; BX <- B^2
+    MOV AX, A     ; AX <- A
+    MOV CX, 4     ; CX <- 4
+    MUL CX        ; AX <- 4*A
+    MOV CX, C     ; CX <- C
+    MUL CX        ; AX <- 4*A*C
+    SUB BX, AX    ; BX <- (B^2 - 4*A*C)
+    MOV disc, BX  ; disc <- BX
