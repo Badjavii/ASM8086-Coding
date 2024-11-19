@@ -10,6 +10,12 @@ Assembly is a low-level programming language used to write programs that are ver
 
 The Intel 8086 is a 16-bit microprocessor introduced by Intel in 1978. It was the basis for the x86 architecture and marked a significant advancement in computing technology. Here, we will explore its architecture, instruction set, and its historical significance in the development of modern computer systems.
 
+### Download Official 8086 Assembly Guide
+
+- [Download 8086 Assembly Guide - Spanish](./sources/ASM8086-Guide.pdf)
+- [Download 8086 Assembly Guide - English](./path-to-your-english-pdf/8086-Assembly-Guide-English.pdf)
+
+
 ## Emu8086 Software 
 
 Emu8086 is an 8086 microprocessor emulator that allows writing, compiling, and debugging assembly language programs for the 8086. It's a valuable tool for learning and practicing assembly language due to its user-friendly environment and useful features. 
@@ -20,10 +26,5 @@ You can download Emu8086 from the following link: [Download Emu8086](https://emu
 
 ### License for Emu8086
 
-User: ISHAAN,glaitm
-Key: 27R3VDEFYFX4N0VC3FRTQZX
-
-### Download Official 8086 Assembly Guide
-
-- [Download 8086 Assembly Guide - Spanish](./sources/ASM8086-Guide.pdf)
-- [Download 8086 Assembly Guide - English](./path-to-your-english-pdf/8086-Assembly-Guide-English.pdf)
+- **User**: ISHAAN,glaitm
+- **Key**: 27R3VDEFYFX4N0VC3FRTQZX
