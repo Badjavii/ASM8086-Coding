@@ -12,5 +12,5 @@ The Intel 8086 is a 16-bit microprocessor introduced by Intel in 1978. It was th
 
 ### Download Official 8086 Assembly Guide
 
-- [Download 8086 Assembly Guide - Spanish](./path-to-your-spanish-pdf/8086-Assembly-Guide-Spanish.pdf)
+- [Download 8086 Assembly Guide - Spanish](./sources/ASM8086-Guide.pdf)
 - [Download 8086 Assembly Guide - English](./path-to-your-english-pdf/8086-Assembly-Guide-English.pdf)
