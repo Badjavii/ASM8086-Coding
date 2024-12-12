@@ -152,40 +152,40 @@ CMP AX, 1
 JNE etiqueta   ; Salta a la instrucción en "etiqueta" si AX no es igual a 1
 ```
 
-- **JG/JNLE**: Salta a una dirección específica si el resultado de la comparación anterior es mayor (SF = OF y ZF = 0).
+- **JA**: Salta a una dirección específica si el resultado de la comparación anterior es mayor (SF = OF y ZF = 0).
 
 Ejemplo de uso:
 
 ```assembly
 CMP AX, BX
-JG etiqueta   ; Salta a la instrucción en "etiqueta" si AX es mayor que BX
+JA etiqueta   ; Salta a la instrucción en "etiqueta" si AX es mayor que BX
 ```
 
-- **JL/JNGE**: Salta a una dirección específica si el resultado de la comparación anterior es menor (SF ≠ OF).
+- **JB**: Salta a una dirección específica si el resultado de la comparación anterior es menor (SF ≠ OF).
 
 Ejemplo de uso:
 
 ```assembly
 CMP AX, BX
-JL etiqueta   ; Salta a la instrucción en "etiqueta" si AX es menor que BX
+JB etiqueta   ; Salta a la instrucción en "etiqueta" si AX es menor que BX
 ```
 
-- **JGE/JNL**: Salta a una dirección específica si el resultado de la comparación anterior es mayor o igual (SF = OF).
+- **JAE**: Salta a una dirección específica si el resultado de la comparación anterior es mayor o igual (SF = OF).
 
 Ejemplo de uso:
 
 ```assembly
 CMP AX, BX
-JGE etiqueta   ; Salta a la instrucción en "etiqueta" si AX es mayor o igual a BX
+JAE etiqueta   ; Salta a la instrucción en "etiqueta" si AX es mayor o igual a BX
 ```
 
-- **JLE/JNG**: Salta a una dirección específica si el resultado de la comparación anterior es menor o igual (SF ≠ OF o ZF = 1).
+- **JBE**: Salta a una dirección específica si el resultado de la comparación anterior es menor o igual (SF ≠ OF o ZF = 1).
 
 Ejemplo de uso:
 
 ```assembly
 CMP AX, BX
-JLE etiqueta   ; Salta a la instrucción en "etiqueta" si AX es menor o igual a BX
+JBE etiqueta   ; Salta a la instrucción en "etiqueta" si AX es menor o igual a BX
 ```
 
 - **LOOP**: Este bucle se ejecuta mientras el registro CX sea distinto de 0. Decrementa CX en 1 cada vez y salta a la dirección especificada si CX no es igual a 0. Útil para repetir un bloque de código un número determinado de veces.
