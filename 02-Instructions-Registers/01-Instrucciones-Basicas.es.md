@@ -21,38 +21,76 @@ Para cualquier programa en ensamblador, es necesario usar las instrucciones de t
 
 La instrucción **MOV** es la más importante y la más usada. Esta instrucción usa dos operandos separados por una coma. El primer operando se denomina *destino* y el segundo *fuente*. La instrucción transfiere al *destino* una copia del dato almacenado en el *fuente*.
 
-    Ejemplo de uso:
+Ejemplo de uso:
 
 ```assembly
-MOV AX, 5   ; AX <- 5
+MOV AX,7   ; AX <- 5
 ```
 
 En este caso, el dato del operando fuente es el 5, que se almacenará en el registro AX. Ahora AX contiene el valor 5.
 
 ## Instrucciones Aritméticas
 
-- **ADD**: Realiza la suma de dos operandos denominados respectivamente *destino* y *fuente*. El dato del operando *fuente* se suma con el dato del operando *destino* y el resultado de esa operación se guarda en el operando *destino* eliminandose el dato anterior y permaneciendo el nuevo dato.
+- **ADD**: Suma el dato del operando fuente al dato del operando destino y almacena el resultado en el destino.
 
-Como el resultado del operación se almacena dentro de uno de los operandos, se concluye que el operando *destino* debe ser un registro de datos.
+Ejemplo de uso:
 
-    Ejemplo de uso:
+```assembly
+MOV AX, 2       ; AX <- 2 
+ADD AX, 2       ; AX <- AX + 2 = 4
+```
 
-    MOV AX, 2           ; AX <- 2
-    ADD AX, 2           ; AX <- AX + 2 = 2 + 2
+En este ejemplo, se transfiere al registro AX el valor 2. Luego, se suma el valor de AX (2) con 2, dando como resultado 4, que se almacena en AX.
 
-    Se le transfiere al registro AX el valor de 2. Seguido se hace la suma del dato almacenado en AX (el cual se sabe que es 2) y el dato 2, es decir, la suma de 2+2 que da como resultado 4. El 4 se almacenará en el registro AX automaticamente.
+- **SUB**: Resta el dato del fuente al dato del destino y almacena el resultado en el destino.
 
-- **SUB**: Realiza la resta de dos operandos denominados respectivamente *destino* y *fuente*. El dato del operando *fuente* corresponde al sustraendo de la resta mientras que el dato del operando *destino* corresponde al minuendo. El resultado de esa operación se guarda en el operando *destino* eliminandose el dato anterior y permaneciendo el nuevo dato.
+Ejemplo de uso:
 
-Como el resultado del operación se almacena dentro de uno de los operandos, se concluye que el operando *destino* debe ser un registro de datos.
+```assembly
+MOV DX, 3       ; DX <- 3 
+SUB DX, 2       ; DX <- DX - 2 = 1
+```
 
-    Ejemplo de uso:
+Se transfiere al registro DX el valor 3. Luego, se resta 2 al valor de DX (3), dando como resultado 1, que se almacena en DX.
 
-    MOV DX, 3           ; DX <- 3
-    SUB DX, 2           ; DX <- DX - 2 = 3 - 2
+- **MUL**: Multiplica el dato del fuente con el dato del destino y almacena el resultado en el destino.
 
-    Se le transfiere al registro DX el valor de 3. Seguido se hace la resta del dato almacenado en DX (el cual se sabe que es 3) y el dato 2, es decir, la resta de 3-2 que da como resultado 1. El 1 se almacenará en el registro DX automaticamente.
+Ejemplo de uso:
 
-- **MUL**: Realiza la multiplicación de dos operandos denominados respectivamente *destino* y *fuente*. El dato del operando *fuente* se multiplica con el dato del operando *destino* y el resultado de esa operación se guarda en el operando *destino* eliminandose el dato anterior y permaneciendo el nuevo dato.
+```assembly
+MOV BX, 3       ; BX <- 3
+MOV AX, 4       ; AX <- 4 
+MUL BX          ; AX <- AX * BX
+```
 
-Como el resultado del operación se almacena dentro de uno de los operandos, se concluye que el operando *destino* debe ser un registro de datos.
+Se transfiere al registro BX el valor 3. El resultado de la multiplicación (4 * 3) se almacenará en AX.
+
+- **MUL**: Divide el dato del destino entre el dato del fuente y almacena el cociente en el destino.
+
+Ejemplo de uso:
+
+```assembly
+MOV BX, 2       ; BX <- 2
+MOV AX, 8       ; AX <- 8
+DIV BX          ; AX <- AX / BX
+```
+
+Se transfiere al registro BX el valor 3. El resultado de la multiplicación (8 / 2) se almacenará en AX.
+
+- **INC**: Incrementa en 1 el valor del destino.
+
+```assembly
+MOV AX, 5       ; AX <- 5
+INC AX          ; AX <- AX + 1
+```
+
+Se transfiere al registro AX el valor 5. Después de la instrucción INC, AX contendrá 6.
+
+- **DEC**: Decrementa en 1 el valor del destino.
+
+```assembly
+MOV DX, 7       ; DX <- 7
+INC DX          ; DX <- DX - 1
+```
+
+Se transfiere al registro DX el valor 7. Después de la instrucción INC, DX contendrá 6.
