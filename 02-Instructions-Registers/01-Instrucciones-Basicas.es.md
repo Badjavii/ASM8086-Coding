@@ -199,8 +199,6 @@ COMIENZO:
 LOOP COMIENZO           ; Este bucle se repite 100 veces
 ```
 
-## Instrucciones de Control de Programa
-
 - **LOOPNE/LOOPNZ**: Este bucle se ejecuta mientras el registro CX sea distinto de 0 y la bandera de cero (ZF) sea igual a 0. Útil para bucles que requieren una condición adicional para romperse.
 
 Ejemplo de uso:
