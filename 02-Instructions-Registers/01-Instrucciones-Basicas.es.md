@@ -94,3 +94,32 @@ INC DX          ; DX <- DX - 1
 ```
 
 Se transfiere al registro DX el valor 7. Después de la instrucción INC, DX contendrá 6.
+
+## Instrucciones Lógicas
+
+- **AND**: Realiza una conjunción lógica bit a bit entre el operando fuente y el operando destino, almacenando el resultado en el destino.
+
+```assembly
+MOV AX, 5       ; AX <- 0101b 
+AND AX, 3       ; AX <- AX & 0011b = 0001b
+```
+
+En este ejemplo, 0101b (5 en decimal) se conjuga lógicamente con 0011b (3 en decimal), dando como resultado 0001b (1 en decimal), que se almacena en AX.
+
+- **OR**: Realiza una disyunción lógica bit a bit entre el operando fuente y el operando destino, almacenando el resultado en el destino.
+
+```assembly
+MOV AX, 5       ; AX <- 0101b 
+OR AX, 3        ; AX <- AX | 0011b = 0111b
+```
+
+En este ejemplo, 0101b (5 en decimal) se disyunta lógicamente con 0011b (3 en decimal), dando como resultado 0111b (7 en decimal), que se almacena en AX.
+
+- **CMP**: Compara el operando fuente con el operando destino restando el valor del fuente al del destino. Los resultados de la comparación afectan las banderas de la CPU, pero no almacenan el resultado de la resta.
+
+```assembly
+MOV AX, 5       ; AX <- 5 
+CMP AX, 3       ; AX - 3 -> afecta las banderas
+```
+
+En este ejemplo, se compara el valor de AX (5) con 3. Esto afectará las banderas de la CPU como ZF (Zero Flag), CF (Carry Flag), SF (Sign Flag) y OF (Overflow Flag), pero el valor de AX permanecerá sin cambios.
