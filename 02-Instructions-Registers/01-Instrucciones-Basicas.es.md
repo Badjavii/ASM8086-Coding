@@ -123,3 +123,110 @@ CMP AX, 3       ; AX - 3 -> afecta las banderas
 ```
 
 En este ejemplo, se compara el valor de AX (5) con 3. Esto afectará las banderas de la CPU como ZF (Zero Flag), CF (Carry Flag), SF (Sign Flag) y OF (Overflow Flag), pero el valor de AX permanecerá sin cambios.
+
+## Instrucciones de Control de Programas
+
+- **JMP**: Realiza un salto incondicional a una dirección específica.
+
+Ejemplo de uso:
+
+```assembly
+JMP etiqueta   ; Salta a la instrucción en "etiqueta"
+```
+
+- **JE/JZ**: Salta a una dirección específica si el resultado de la comparación anterior es igual a cero (Zero Flag = 1).
+
+Ejemplo de uso:
+
+```assembly
+CMP AX, 0
+JE etiqueta   ; Salta a la instrucción en "etiqueta" si AX es igual a 0
+```
+
+- **JNE/JNZ**: Salta a una dirección específica si el resultado de la comparación anterior no es igual a cero (Zero Flag = 0).
+
+Ejemplo de uso:
+
+```assembly
+CMP AX, 1
+JNE etiqueta   ; Salta a la instrucción en "etiqueta" si AX no es igual a 1
+```
+
+- **JG/JNLE**: Salta a una dirección específica si el resultado de la comparación anterior es mayor (SF = OF y ZF = 0).
+
+Ejemplo de uso:
+
+```assembly
+CMP AX, BX
+JG etiqueta   ; Salta a la instrucción en "etiqueta" si AX es mayor que BX
+```
+
+- **JL/JNGE**: Salta a una dirección específica si el resultado de la comparación anterior es menor (SF ≠ OF).
+
+Ejemplo de uso:
+
+```assembly
+CMP AX, BX
+JL etiqueta   ; Salta a la instrucción en "etiqueta" si AX es menor que BX
+```
+
+- **JGE/JNL**: Salta a una dirección específica si el resultado de la comparación anterior es mayor o igual (SF = OF).
+
+Ejemplo de uso:
+
+```assembly
+CMP AX, BX
+JGE etiqueta   ; Salta a la instrucción en "etiqueta" si AX es mayor o igual a BX
+```
+
+- **JLE/JNG**: Salta a una dirección específica si el resultado de la comparación anterior es menor o igual (SF ≠ OF o ZF = 1).
+
+Ejemplo de uso:
+
+```assembly
+CMP AX, BX
+JLE etiqueta   ; Salta a la instrucción en "etiqueta" si AX es menor o igual a BX
+```
+
+- **LOOP**: Este bucle se ejecuta mientras el registro CX sea distinto de 0. Decrementa CX en 1 cada vez y salta a la dirección especificada si CX no es igual a 0. Útil para repetir un bloque de código un número determinado de veces.
+
+Ejemplo de uso:
+
+```assembly
+MOV CX, 100
+COMIENZO: 
+; código del bucle 
+LOOP COMIENZO           ; Este bucle se repite 100 veces
+```
+
+## Instrucciones de Control de Programa
+
+- **LOOPNE/LOOPNZ**: Este bucle se ejecuta mientras el registro CX sea distinto de 0 y la bandera de cero (ZF) sea igual a 0. Útil para bucles que requieren una condición adicional para romperse.
+
+Ejemplo de uso:
+
+```assembly
+MOV CX, 100 
+COMIENZO: 
+; código del bucle 
+LOOPNZ COMIENZO         ; Este bucle se repite mientras CX ≠ 0 y ZF = 0
+```
+
+- **LOOPE/LOOPZ**: Este bucle se ejecuta mientras el registro CX sea distinto de 0 y la bandera de cero (ZF) sea igual a 1. Similar al anterior, pero con una condición diferente.
+
+Ejemplo de uso:
+
+```assembly
+MOV CX, 100 
+COMIENZO: 
+; código del bucle 
+LOOPZ COMIENZO          ; Este bucle se repite mientras CX ≠ 0 y ZF = 1
+```
+
+- **JCXZ**: Realiza un salto incondicional si el registro CX es igual a 0. Útil para verificar la terminación de un bucle antes de ejecutarlo.
+
+Ejemplo de uso:
+
+```assembly
+JCXZ etiqueta           ; Salta a "etiqueta" si CX = 0
+```
