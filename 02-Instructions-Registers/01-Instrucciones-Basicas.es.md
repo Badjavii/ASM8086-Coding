@@ -24,7 +24,7 @@ La instrucción **MOV** es la más importante y la más usada. Esta instrucción
 Ejemplo de uso:
 
 ```assembly
-MOV AX,7   ; AX <- 5
+MOV AX, 7   ; AX <- 7
 ```
 
 En este caso, el dato del operando fuente es el 5, que se almacenará en el registro AX. Ahora AX contiene el valor 5.
